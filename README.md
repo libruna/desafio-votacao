@@ -37,7 +37,7 @@ Desta forma, é fácil distinguir diferentes versões da API, o que facilita a m
 A especificação OpenAPI da aplicação está disponível em: http://localhost:8080/voting-manager/swagger-ui/index.html
 
 ## Coleção do Postman
-A coleção da API está disponível para download [aqui](./collection/voting-manager-collection.json).
+A coleção da API está disponível para download [aqui](./collection/desafio-votacao.postman_collection.json).
 
 ## Configuração do ambiente
 
@@ -57,3 +57,11 @@ Após clonar o repositório, utilizando o terminal, navege até o diretório rai
 2. Instale as dependências com `mvn install`
 3. Inicie a aplicação com `mvn spring-boot:run`
 4. Execute os testes unitários com `mvn test`
+
+## Oportunidades de melhorias futuras
+
+- Containerizar a aplicação e incluir ela no docker-compose.
+- Otimizar a quantidade de consultas ao banco nas validações do fluxo de votação.
+- Incluir dados pré-cadastrados na inicialização do banco de dados local.
+- Melhorar o desempenho do fluxo de votação com o uso de caching, por exemplo.
+- Incluir endpoints para consulta dos dados de sessões.
