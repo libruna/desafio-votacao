@@ -1,0 +1,18 @@
+server:
+  port: 8080
+  servlet:
+    context-path: /voting-manager
+
+spring:
+  application:
+    name: desafio-votacao
+  data:
+    mongodb:
+      database: voting-manager
+      uri: mongodb://localhost:27017/voting-manager
+
+springdoc:
+  api-docs:
+    path: /api-docs
+  swagger-ui:
+    use-root-path: true
