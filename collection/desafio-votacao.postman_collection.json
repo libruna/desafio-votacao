@@ -1,0 +1,211 @@
+{
+	"info": {
+		"_postman_id": "07bcc14d-995f-43ee-b73f-1a6674a73cdf",
+		"name": "desafio-votacao",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "43706565",
+		"_collection_link": "https://bruna-1842383.postman.co/workspace/desafios~f2d218e1-9d32-4d51-a2fa-b7c3c74f8a77/collection/43706565-07bcc14d-995f-43ee-b73f-1a6674a73cdf?action=share&source=collection_link&creator=43706565"
+	},
+	"item": [
+		{
+			"name": "votação",
+			"item": [
+				{
+					"name": "Cria uma pauta",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"Mudança nos Horários das Reuniões Fixas\",\r\n    \"description\": \"Discussão sobre a readequação dos horários das reuniões recorrentes para melhor atender aos colaboradores de diferentes fusos horários.\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/voting-manager/proposals",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"voting-manager",
+								"proposals"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Inicia uma sessão de votação",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"durationInMinutes\": 2\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/voting-manager/proposals/67f364f19c2e907f6e3b5783/sessions",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"voting-manager",
+								"proposals",
+								"67f364f19c2e907f6e3b5783",
+								"sessions"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Registra um voto",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"sessionId\": \"67f3692dfbae9225bd137c01\",\r\n    \"memberId\": \"67f365379c2e907f6e3b5784\",\r\n    \"favorable\": true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/voting-manager/proposals/67f364f19c2e907f6e3b5783/votes",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"voting-manager",
+								"proposals",
+								"67f364f19c2e907f6e3b5783",
+								"votes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Recupera pauta por ID",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/voting-manager/proposals/67f364f19c2e907f6e3b5783",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"voting-manager",
+								"proposals",
+								"67f364f19c2e907f6e3b5783"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Recupera resultado da votação",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/voting-manager/proposals/67f364f19c2e907f6e3b5783/summary",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"voting-manager",
+								"proposals",
+								"67f364f19c2e907f6e3b5783",
+								"summary"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "associado",
+			"item": [
+				{
+					"name": "Salva um associado",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Camila Fernandes Melo\",\r\n    \"cpf\": \"73998759956\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/voting-manager/members",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"voting-manager",
+								"members"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Recupera associado por ID",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/voting-manager/members/67f365379c2e907f6e3b5784",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"voting-manager",
+								"members",
+								"67f365379c2e907f6e3b5784"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
